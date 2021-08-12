@@ -1,0 +1,17 @@
+{
+  "name": "demichem_assignment4",
+  "version": "1.0.0",
+  "description": "Portfolio Project for CS 290 - Web Development",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt DeMichele",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.1.0",
+    "mongoose": "^5.13.5"
+  }
+}
