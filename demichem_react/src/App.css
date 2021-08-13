@@ -3,36 +3,165 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 15vmin;
+  width: 50px;
   pointer-events: none;
+  color: #04AA6D;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-title {
+  
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #1A1A1D;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  width: 100%;
 }
 
 .App-link {
-  color: #61dafb;
+  color: white;
+  font-weight: 700;
+  width: 20%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-link-icon {
+  margin-left: 10px;
+}
+
+.App-link:hover {
+  color: #04AA6D;
+}
+
+.App-page {
+  min-height: 90vh;
+  margin-bottom: 30vh;
+}
+
+.App-title {
+  margin: 5vh 0px;
+  width: 100%;
+}
+
+/* Title Component */
+.App-title-component {
+  width: 100%;
+}
+
+/* Create Page Styles */
+.App-create-page {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Home Page Styles */
+.App-home-page {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.App-home-description-container {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%; 
+}
+
+.App-home-description {
+  line-height: 28px;
+  
+}
+
+/* Edit Page Syles */
+.App-edit-page {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Form Styles */
+.App-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 80%;
+  padding: 2% 5%;
+}
+
+.App-input-group-1 {
+  width: 20%;
+  display: block;
+}
+
+.App-input-group-2 {
+  width: 10%;
+  display: block;
+}
+
+.App-form-label {
+  width: 100%;
+  color: black;
+  font-size: calc(10px + 1vmin);
+  font-weight: 700;
+  margin-bottom: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.App-form-input {
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+
+.App-form-button {
+  background: #333;
+  color: white;
+  border: none;
+  font-size: calc(10px + 1vmin);
+  font-weight: 700;
+  padding: 10px 30px;
+}
+
+.App-form-button:hover {
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+/* Table Style */
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
 }
