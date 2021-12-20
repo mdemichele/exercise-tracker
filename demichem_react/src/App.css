@@ -165,3 +165,76 @@ th {
   background-color: #04AA6D;
   color: white;
 }
+
+/* Form Styles */
+.App-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 80%;
+  padding: 2% 5%;
+}
+
+.App-input-group-1 {
+  width: 20%;
+  display: block;
+}
+
+.App-input-group-2 {
+  width: 10%;
+  display: block;
+}
+
+.App-form-label {
+  width: 100%;
+  color: black;
+  font-size: calc(10px + 1vmin);
+  font-weight: 700;
+  margin-bottom: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.App-form-input {
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+
+.App-form-button {
+  background: #333;
+  color: white;
+  border: none;
+  font-size: calc(10px + 1vmin);
+  font-weight: 700;
+  padding: 10px 30px;
+}
+
+.App-form-button:hover {
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+/* Table Style */
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
