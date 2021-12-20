@@ -2,7 +2,7 @@ import { MdAccessAlarm } from 'react-icons/md';
 import { MdAddBox } from 'react-icons/md';
 import './App.css';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import HomePage from './pages/HomePage.js';
 import CreatePage from './pages/CreatePage.js';
 import EditPage from './pages/EditPage.js';
