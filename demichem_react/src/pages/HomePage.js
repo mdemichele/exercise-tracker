@@ -14,14 +14,14 @@ function HomePage({ setRunToEdit }) {
   const loadRuns = async () => {
     const response = await fetch('/runs');
     const data = await response.json();
-    
+    console.log(data);
     // Sanitize dates into human-readable form 
-    data.map(run => { 
-      let dateObject = new Date(run.date);
-      let dateString = dateObject.toDateString();
-      run.date = dateString;
-     })
-    
+    // data.map(run => { 
+    //   let dateObject = new Date(run.date);
+    //   let dateString = dateObject.toDateString();
+    //   run.date = dateString;
+    //  })
+    console.log(data);
     setRuns(data);  
   }
   
@@ -38,10 +38,13 @@ function HomePage({ setRunToEdit }) {
   
   // Method to handle loading chart 
   const loadChart = async () => {
-    heatmap(runs, {
+    let heatmap1 = heatmap(runs, {
       x: d => d.date,
-      y: d => d.distance,
+      y: d => d.distance
     });
+    console.log(heatmap1);
+    let visualization = document.getElementById("visualization-container");
+    visualization.appendChild(heatmap1);
   }
   
   // Handle Edit Exercise Function 
@@ -51,9 +54,9 @@ function HomePage({ setRunToEdit }) {
   }
   
   // Load Exercises when component is mounted 
-  useEffect(() => {
-    loadRuns();
-    loadChart();
+  useEffect(async () => {
+    await loadRuns();
+    await loadChart();
   }, []);
   
   return (
