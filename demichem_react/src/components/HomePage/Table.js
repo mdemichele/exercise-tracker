@@ -1,21 +1,18 @@
 import Row from './Row.js';
 
-function Table({ exercises, onEdit, onDelete }) {
+function Table({ runs, onEdit, onDelete }) {
   return (
     <table>
-      <thead>
-        <tr>
-          <th>Exercise Name</th>
-          <th>Reps</th>
-          <th>Weight</th>
-          <th>Units of Measurement</th>
-          <th>Date</th>
-          <th>Edit</th>
-          <th>Delete</th>
+      <thead key="table-header">
+        <tr key="table-header-row">
+          <th key="table-header-distance">Distance</th>
+          <th key="table-header-date">Date</th>
+          <th key="table-header-edit">Edit</th>
+          <th key="table-header-delete">Delete</th>
         </tr>
       </thead>
-      <tbody>
-      { exercises.map( exercise => <Row exercise={exercise} onDelete={onDelete} onEdit={onEdit}/>)}
+      <tbody key="table-body">
+      { runs.map( (run, index) => <Row run={run} index={index} onDelete={onDelete} onEdit={onEdit}/>)}
       </tbody>
     </table>
   );

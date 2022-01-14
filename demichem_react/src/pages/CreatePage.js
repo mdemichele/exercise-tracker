@@ -5,11 +5,8 @@ import Form from '../components/CreatePage/Form.js';
 
 function CreatePage(props) {
   // STATE VARIABLES 
-  const [name, setName] = useState('');
-  const [reps, setReps] = useState(0);
-  const [weight, setWeight] = useState(0);
-  const [unit, setUnit] = useState('lbs');
-  const [date, setDate] = useState(new Date());
+  const [distance, setDistance] = useState(0);
+  const [date, setDate] = useState('');
   
   // HISTORY PROPERTY
   const history = useHistory();
@@ -20,24 +17,21 @@ function CreatePage(props) {
     await event.preventDefault();
     
     // create a JSON object of all the state variables in their current state 
-    const newExercise = { 
-      name: name, 
-      reps: reps, 
-      weight: weight, 
-      unit: unit, 
+    const newRun = { 
+      distance: distance,  
       date: date 
     };
     
     // Create a POST Request to the api 
-    const response = await fetch('/exercises', {
+    const response = await fetch('/run', {
       method: 'POST',
-      body: JSON.stringify(newExercise),
+      body: JSON.stringify(newRun),
       headers: { 'Content-Type': 'application/json' }
     });
     
     // If request was successful 
     if (response.status === 201) {
-      await alert(`You've successfully created a new exercise named ${name}`);
+      await alert(`You've successfully created a new exercise.`);
       history.push('/');
     } else {
       alert(`Server Responded with ${response.status} error, try again.`);
@@ -46,11 +40,11 @@ function CreatePage(props) {
   
   return (
     <section className="App-page App-create-page">
-      <Title title="Create A New Exercise"/>
+      <Title title="Add a New Run"/>
       <div className="App-home-description-container">
-        <p className="App-home-description">To create a new exercise, fill out all the fields below and click submit. You'll receive an alert notfiying you of a successful submission.</p>
+        <p className="App-home-description">To add a new run, fill out all the fields below and click submit. You'll receive an alert notfiying you of a successful submission.</p>
       </div>
-      <Form name={name} setName={setName} reps={reps} setReps={setReps} weight={weight} setWeight={setWeight} unit={unit} setUnit={setUnit} date={date} setDate={setDate} handleSubmit={handleSubmit}/>
+      <Form distance={distance} setDistance={setDistance} date={date} setDate={setDate} handleSubmit={handleSubmit}/>
     </section>
   );
 }

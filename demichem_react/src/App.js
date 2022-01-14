@@ -8,7 +8,7 @@ import CreatePage from './pages/CreatePage.js';
 import EditPage from './pages/EditPage.js';
 
 function App() {
-  const [exerciseToEdit, setExerciseToEdit] = useState();
+  const [runToEdit, setRunToEdit] = useState();
   
   return (
     <div className="App">
@@ -16,18 +16,18 @@ function App() {
         <header className="App-header">
           <MdAccessAlarm className="App-logo" />
           <Link className="App-link" to="/">Home</Link>
-          <Link className="App-link" to="/create">Create A New Exercise  <MdAddBox className="App-link-icon"/></Link>
+          <Link className="App-link" to="/create">Add a New Run  <MdAddBox className="App-link-icon"/></Link>
         </header>
         
           <Switch>
             <Route path="/create">
               <CreatePage />
             </Route>
-            <Route path="/exercises/">
-              <EditPage exerciseToEdit={exerciseToEdit}/>
+            <Route path="/runs/">
+              <EditPage runToEdit={runToEdit}/>
             </Route>
             <Route path="/" exact>
-              <HomePage setExerciseToEdit={setExerciseToEdit}/>
+              <HomePage setRunToEdit={setRunToEdit}/>
             </Route>
           </Switch> 
         

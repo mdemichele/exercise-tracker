@@ -1,58 +1,52 @@
 import mongoose from 'mongoose';
-import { Exercise } from '../models/exercise-model.js';
+import { Run } from '../models/run-model.js';
 
 // 01. POST: Create an exercise 
-export const createExercises = async (req, res, next) => {
-  
-  // Create a new exercise 
-  let exercise = await new Exercise({ 
-    name: req.body.name, 
-    reps: req.body.reps, 
-    weight: req.body.weight, 
-    unit: req.body.unit, 
+export const createRun = async (req, res, next) => {
+
+  // Create a new run 
+  let run = await new Run({ 
+    distance: req.body.distance, 
     date: req.body.date 
   });
   
-  // Save the exercise 
-  exercise.save();
+  // Save the run 
+  run.save();
   
   // Respond back with JSON data 
-  await res.status(201).json(exercise);
+  await res.status(201).json(run);
   
 }
 
-// 02. GET: Retrieve exercises 
-export const retrieveExercises = async (req, res, next) => {
+// 02. GET: Retrieve runs 
+export const retrieveRuns = async (req, res, next) => {
   // Retrieve all exercises from database 
-  let exercises = await Exercise.find({});
+  let runs = await Run.find({});
   
   // Respond back with JSON data
-  await res.status(200).json(exercises);
+  await res.status(200).json(runs);
   
 }
 
 // 03. PUT: Update exercises 
-export const updateExercise = async (req, res, next) => {
+export const updateRun = async (req, res, next) => {
   // Find the exercise to be updated 
-  let exercise = await Exercise.findByIdAndUpdate(req.params.id, {
-    name: req.body.name,
-    reps: req.body.reps,
-    weight: req.body.weight,
-    unit: req.body.unit,
+  let run = await Run.findByIdAndUpdate(req.params.id, {
+    distance: req.body.distance,
     date: req.body.date
   });
   // Save Changes 
-  exercise.save();
+  run.save();
   
   // Send response 
-  res.status(200).json(exercise);
+  res.status(200).json(run);
 }
 
 // 04. DELETE: Delete exercises 
-export const deleteExercise = async (req, res, next) => {
+export const deleteRun = async (req, res, next) => {
   
   // Find the exercise to be deleted and delete 
-  let exercise = await Exercise.findByIdAndDelete(req.params.id);
+  let run = await Run.findByIdAndDelete(req.params.id);
   
   // Send Response 
   res.status(204).send();
