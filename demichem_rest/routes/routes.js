@@ -4,13 +4,13 @@ import * as controller from '../controllers/controller.js';
 export const router = express.Router();
 
 // POST route 
-router.post("/exercises", controller.createExercises);
+router.post("/run", controller.createRun);
 
 // GET route 
-router.get("/exercises", controller.retrieveExercises);
+router.get("/runs", controller.retrieveRuns);
 
 // PUT route 
-router.put("/exercises/:id", controller.updateExercise);
+router.put("/runs/:id", controller.updateRun);
 
 // DELETE route 
-router.delete("/exercises/:id", controller.deleteExercise);
+router.delete("/runs/:id", controller.deleteRun);

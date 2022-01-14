@@ -1,15 +1,12 @@
 import { MdDeleteForever, MdEdit } from 'react-icons/md';
 
-function Row({ exercise, onDelete, onEdit }) {
+function Row({ run, index, onDelete, onEdit }) {
   return (
-    <tr>
-      <td>{exercise.name}</td>
-      <td>{exercise.reps}</td>
-      <td>{exercise.weight}</td>
-      <td>{exercise.unit}</td>
-      <td>{exercise.date}</td>
-      <td>{<MdEdit onClick={ () => onEdit(exercise) }/>}</td>
-      <td>{<MdDeleteForever onClick={ () => onDelete(exercise._id)}/>}</td>
+    <tr key={index}>
+      <td key={`distance-${index}`}>{run.distance}</td>
+      <td key={`date-${index}`}>{run.date}</td>
+      <td key={`edit-${index}`}>{<MdEdit onClick={ () => onEdit(run) }/>}</td>
+      <td key={`delete-${index}`}>{<MdDeleteForever onClick={ () => onDelete(run._id)}/>}</td>
     </tr>
   );
 }

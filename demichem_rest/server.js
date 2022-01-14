@@ -1,4 +1,6 @@
 // Declare dependencies
+require('dotenv').config();
+
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './routes/routes.js';
@@ -7,7 +9,7 @@ import { router } from './routes/routes.js';
 const app = express();
 
 // Connect to Database 
-mongoose.connect('mongodb://localhost:27017/exercises', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/runs', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.once("open", () => {
