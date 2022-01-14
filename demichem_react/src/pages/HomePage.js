@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Title from '../components/base/Title.js';
 import Table from '../components/HomePage/Table.js';
+import * as d3 from 'd3';
+import moment from 'moment';
+import heatmap from '../heat-map.js';
 
 function HomePage({ setRunToEdit }) {
   const [runs, setRuns] = useState([]);
@@ -33,6 +36,14 @@ function HomePage({ setRunToEdit }) {
     }
   }
   
+  // Method to handle loading chart 
+  const loadChart = async () => {
+    heatmap(runs, {
+      x: d => d.date,
+      y: d => d.distance,
+    });
+  }
+  
   // Handle Edit Exercise Function 
   const onEdit = async (run) => {
     await setRunToEdit(run);
@@ -42,6 +53,7 @@ function HomePage({ setRunToEdit }) {
   // Load Exercises when component is mounted 
   useEffect(() => {
     loadRuns();
+    loadChart();
   }, []);
   
   return (
@@ -52,8 +64,11 @@ function HomePage({ setRunToEdit }) {
         <p className="App-home-description">Below is a list of your recorded run. To add a new run, click the link above. To edit a run, click the edit icon. To delete a run, click the delete icon.</p>
       </div>
       
-      
       <Table runs={runs} onEdit={onEdit} onDelete={onDelete} />
+      
+      {/* Heat Map Visualization Section */}
+      <div id="visualization-container"></div>
+      
     </section>
   );
 }
